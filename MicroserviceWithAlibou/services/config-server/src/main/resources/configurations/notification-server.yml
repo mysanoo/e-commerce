@@ -1,0 +1,36 @@
+spring:
+  data:
+    mongodb:
+      username: myclover
+      password:
+      host: localhost
+      port: 27017
+      database: ms-notification
+      authentication-database: admin
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: paymentGroup,orderGroup
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: '*'
+        spring.json.type.mapping: orderConfirmation:com.example.notification_server.kafka.order.OrderConfirmation,paymentConfirmation:com.example.notification_server.kafka.payment.PaymentConfirmation
+  mail:
+    host: localhost
+    port: 1025
+    username: myclover
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enabled: true
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
+  application:
+    name: notification-server
+server:
+  port: 8020

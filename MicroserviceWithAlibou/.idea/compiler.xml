@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="config-server" />
+        <module name="customer-server" />
+        <module name="payment-server" />
+        <module name="product-server" />
+        <module name="dicovery-server" />
+        <module name="order-server" />
+        <module name="notification-server" />
+        <module name="gateway" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="config-server" options="-parameters" />
+      <module name="customer-server" options="-parameters" />
+      <module name="dicovery-server" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="notification-server" options="-parameters" />
+      <module name="order-server" options="-parameters" />
+      <module name="payment-server" options="-parameters" />
+      <module name="product-server" options="-parameters" />
+    </option>
+  </component>
+</project>
